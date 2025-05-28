@@ -1,5 +1,7 @@
 # kanban
 Sistema Kanban para organização de projetos, com drag-and-drop e visualização em pop-up."
 
-![Demonstração do Kanban](https://github.com/user-attachments/assets/0b6d5ac0-86cb-4bc1-ae88-a7d5150932d8)
+![Demonstração do Kanban](./demo.gif)
 
+
+![KanbandeProjetos-GoogleChrome2025-05-2802-51-55-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d4c2a32a-b1aa-44b1-bade-71bfab514383)
