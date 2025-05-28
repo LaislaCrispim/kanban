@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban de Projetos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="kanban-header">
+    <h1>ORGANIZAÇÃO DE PROJETOS - EQUIPE TITANS</h1>
+  </header>
+
+  <div class="kanban-board">
+    <div class="kanban-column" id="nao-iniciados" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="kanban-column-header">
+        <h3>PROJETOS NÃO INICIADOS</h3>
+        <button onclick="abrirModal('nao-iniciados')">+</button>
+      </div>
+    </div>
+
+    <div class="kanban-column" id="em-analise" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="kanban-column-header">
+        <h3>PROJETOS EM ANÁLISE</h3>
+        <button onclick="abrirModal('em-analise')">+</button>
+      </div>
+    </div>
+
+    <div class="kanban-column" id="iniciados" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="kanban-column-header">
+        <h3>PROJETOS INICIADOS</h3>
+        <button onclick="abrirModal('iniciados')">+</button>
+      </div>
+    </div>
+
+    <div class="kanban-column" id="em-finalizacao" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="kanban-column-header">
+        <h3>PROJETOS EM FINALIZAÇÃO</h3>
+        <button onclick="abrirModal('em-finalizacao')">+</button>
+      </div>
+    </div>
+
+    <div class="kanban-column" id="entregues" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="kanban-column-header">
+        <h3>PROJETOS ENTREGUES</h3>
+        <button onclick="abrirModal('entregues')">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Adição -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2>NOVO PROJETO</h2>
+      <form id="formProjeto">
+        <input type="hidden" id="colunaDestino">
+        <label>Título:</label>
+        <input type="text" id="titulo" required>
+
+        <label>Data de Entrega:</label>
+        <input type="date" id="dataEntrega" required>
+
+        <label>Responsável:</label>
+        <input type="text" id="responsavel">
+
+        <label>Prioridade:</label>
+        <select id="prioridade">
+          <option value="nenhuma">SEM CLASSIFICAÇÃO</option>
+          <option value="alta">ALTA</option>
+          <option value="media">MÉDIA</option>
+          <option value="baixa">BAIXA</option>
+        </select>
+
+        <label>URL da Imagem:</label>
+        <input type="url" id="imagem">
+
+        <label>Observações:</label>
+        <textarea id="observacoes"></textarea>
+
+        <button type="submit">ADICIONAR PROJETO</button>
+        
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Visualização -->
+  <div id="visualizacaoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharVisualizacao()">&times;</span>
+      <div id="visualizacaoConteudo"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
